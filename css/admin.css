@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: url('../images/service-bg.png')no-repeat center / cover;
+    min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+    z-index: 999;
+}
+input {
+	background: #dafeff !important;
+	color: #222 !important;
+	font-size: 16px !important;
+	outline: none;
+	padding: 25px 15px !important;
+	width: 250px !important;
+}
+label{
+	font-size: 16px;
+	line-height: 24px;
+	margin: 5px 0 10px;
+	color: #444 !important;
+}
+.container {
+	background: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 7px 14px rgba(0,0,0,0.25), 
+	  0 5px 5px rgba(0,0,0,0.22);
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;
+    margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn{
+	margin-top: 20px;
+	font-size: 18px !important;
+	padding: 8px 20px;
+	background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+}
+.preloader{
+    width: 100%;
+}
