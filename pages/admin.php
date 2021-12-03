@@ -13,8 +13,8 @@
     <div class="container">
         <form action="../components/login-admin.php" method="post">
             <div class="form-floating">
-                <label for="floatingInput">Email manzili *</label>
-                <input name="email" type="email" class="form-control" id="floatingInput" placeholder="ism@namuna.com" required>
+                <label for="floatingInput">login</label>
+                <input name="email" type="text" class="form-control" id="floatingInput" placeholder="ism@namuna.com" required>
               </div>
               <div class="form-floating">
                   <label for="floatingPassword">Parol *</label>
