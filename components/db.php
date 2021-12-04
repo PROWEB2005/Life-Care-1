@@ -5,12 +5,10 @@ session_start();
     $dbuser = 'root';
     $pass = '';
     $host = 'localhost';
-
-return new PDO("mysql:host=$host; dbname=$dbname",$dbuser,$pass);
+    return new PDO("mysql:host=$host; dbname=$dbname",$dbuser,$pass);
 }
 function adminLogin($login, $pass){
     $pdo = pdo();
-
     $query = "SELECT * FROM admin WHERE login = ?";
     $driver = $pdo->prepare($query);
     $result = $driver->execute([$login]);
@@ -18,7 +16,7 @@ function adminLogin($login, $pass){
 
     if ($user['login'] == $login && $user['password'] == $pass) {
         $_SESSION['login'] = $user['login'];
-        return true;
+        return $login;
     } else {
         return false;
     }

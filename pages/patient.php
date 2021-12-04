@@ -14,44 +14,44 @@
             <h2 class="form_title">Bemorlarni Ro'yxatga olish</h1>
             <form action="" class="patient_form" method="post" enctype="multipart/form-data">
                 <div class="input_content">
-                    <h4 class="input_title">Bemor ismi</h4>
+                    <h4 class="input_title">Bemor ismi <span>*</span></h4>
                     <div class="patient_input">
-                        <input name="name" type="text" class="form_input" required>
-                        <label for="name" class="form_label">Ismi...</label>
+                        <input name="name" type="text" class="form_input anim_input" required>
+                        <label for="name" class="form_label">Falonchi...</label>
                     </div>
                 </div>
                 <div class="input_content">
-                    <h4 class="input_title">Bemor familiyasi</h4>
+                    <h4 class="input_title">Bemor familiyasi <span>*</span></h4>
                     <div class="patient_input">
-                        <input name="surname" type="text" class="form_input" required>
-                        <label for="surname" class="form_label">Familiyasi...</label>
+                        <input name="surname" type="text" class="form_input anim_input" required>
+                        <label for="surname" class="form_label">Falonchiyev...</label>
                     </div>
                 </div>
                 <div class="input_content">
-                    <h4 class="input_title">Bemor Otasining ismi</h4>
+                    <h4 class="input_title">Bemor Otasining ismi <span>*</span></h4>
                     <div class="patient_input">
-                        <input name="patronymic" type="text" class="form_input" required>
-                        <label for="patronymic" class="form_label">Otasining ismi...</label>
+                        <input name="patronymic" type="text" class="form_input anim_input" required>
+                        <label for="patronymic" class="form_label">Falonchi o'g'li...</label>
                     </div>
                 </div>
                 <div class="input_content">
-                    <h4 class="input_title">Kasal turi</h4>
+                    <h4 class="input_title">Kasal turi <span>*</span></h4>
                     <div class="patient_input">
-                        <input name="sicktype" type="text" class="form_input" required>
-                        <label for="sicktype" class="form_label">Kasal turi...</label>
+                        <input name="sicktype" type="text" class="form_input anim_input" required>
+                        <label for="sicktype" class="form_label">Yo'tal...</label>
                     </div>
                 </div>
                 <div class="input_content">
-                    <h4 class="input_title">Bemor Yoshi</h4>
+                    <h4 class="input_title">Bemor Yoshi <span>*</span></h4>
                     <div class="patient_input">
-                        <input name="age" type="number" class="form_input" required>
-                        <label for="age" class="form_label">Bemor yoshi...</label>
+                        <input name="age" type="number" class="form_input anim_input" min="0" required>
+                        <label for="age" class="form_label">20...</label>
                     </div>
                 </div>
                 <div class="input_content">
-                    <h4 class="input_title">Bemorning Pasport seriya raqami</h4>
+                    <h4 class="input_title">Bemorning Pasport seriya raqami <span>*</span></h4>
                     <div class="patient_input">
-                        <input name="age" type="number" class="form_input" required>
+                        <input name="age" type="text" class="form_input anim_input" required>
                         <label for="age" class="form_label">AA123456...</label>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <div class="input_content">
-                    <h4 class="input_title">Shifoxonaga kelgan Vaqti</h4>
+                    <h4 class="input_title">Shifoxonaga kelgan Vaqti <span>*</span></h4>
                     <div class="patient_input">
                         <input name="date" type="date" class="form_input" required>
                     </div>
@@ -83,27 +83,34 @@
                 <div class="input_content">
                     <h4 class="input_title">Tuzalgan(ketgan) Vaqti</h4> 
                     <div class="patient_input">
-                        <input name="date" type="date" class="form_input" required>
+                        <input name="date" type="date" class="form_input not_required">
                     </div>
                 </div>
                 <div class="input_content">
                     <h4 class="input_title">Bemorning Telefon raqami</h4>
                     <div class="patient_input">
-                        <input name="tel" type="number" class="form_input" required>
+                        <input name="tel" type="number" class="form_input anim_input not_required" min="0">
                         <label for="tel" class="form_label">+99812345678...</label>
                     </div>
+                </div>
+                <div class="input_content rule_area">
+                    <div class="rule_input">
+                        <input name="rule" type="checkbox" class="form_rule">
+                        <span>Saytning barcha shart va qoidalariga roziman</span>
+                    </div>
+                    <p class="rule_text">Kiritilishi shart bo'lgan joylar * bilan belgilangan!</p>
                 </div>
                 <button type="submit" class="btn patient_btn btn-light btn-radius btn-brd grd1 effect-1">Tasdiqlash</button>
             </form>
         </div>
         <div class="patient_panel">
             <h3 class="patient_panel_title">Creative Coders jamoasi</h1>
-            <h1 class="patient_panel_text">Bemorlar ro'yxatini bizning Databazalarda ishonchli saqlang</h2>
+            <h1 class="patient_panel_text">Bemorlar ro'yxatini bizning Ma'lumotlar bazamizda ishonchli saqlang</h2>
             <p class="patient_panel_info">Buloqboshi tumanidagi barcha shifoxona poliklinika va internatlar bemorlar va kasallar ro'yxatini saqlash uchun ishlab chiqildi. Ro'yxatlar qo'shish faqat shifoxona admini(Ro'yxatga javobgor shaxs) tomonidan qo'shilib boriladi. Ro'yxatlarni o'chirsh boshqarish va nazorat qilish Faqat shifoxona egasi qo'lida bo'ladi.</p>
-            <img src="../images/image_processing20200213-28304-bq9v4n-removebg-preview.png" alt="">
+            <img src="../images/patient_panel.png" class="patient_panel_img" alt="">
             <div class="patient_panel_footer">Creative Coders jamoasi mahsuloti</div>
         </div>
     </div>
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js?v=<?= time()?>"></script>
 </body>
 </html>

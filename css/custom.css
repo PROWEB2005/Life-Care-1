@@ -147,65 +147,6 @@ header {
 .info-inner span.icontop img {
 	width:100%;
 }
-.serch-bar {
-    float: right;
-    width: 250px;
-}
-/** search bar **/
-#custom-search-input {
-    padding: 0;
-    border: none;
-    border-radius: 50px;
-    background-color: #fff;
-    overflow: hidden;
-    margin: 10px 0;
-}
-#custom-search-input .form-control.input-lg {
-    border-radius: 50px;
-    overflow: hidden;
-    border: yellow;
-    float: left;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 0px 25px 0 25px;
-    color: #222;
-    width: 200px;
-    height: 40px;
-}
-#custom-search-input button {
-    margin: 0;
-    background: none;
-    box-shadow: none;
-    color: #222;
-    padding: 0;
-}
-#custom-search-input button i {
-    font-size: 18px;
-    color: #333;
-}
-#custom-search-input input{
-    border: 0;
-    box-shadow: none;
-}
-#custom-search-input button{
-    margin: 0;
-    background: none;
-    box-shadow: none;
-    border: 0;
-    color: #666666;
-    padding: 0 15px 0 15px;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input button:hover{
-    border: 0;
-    box-shadow: none;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input .glyphicon-search{
-    font-size: 23px;
-}
 .big-tagline {
     float: left;
     width: 100%;
@@ -1287,10 +1228,6 @@ body.clinic_version .desc {
 }
 .footer-info p {
     float: left;
-    width: 100%;
-}
-.serch-bar {
-    float: right;
     width: 100%;
 }
 	

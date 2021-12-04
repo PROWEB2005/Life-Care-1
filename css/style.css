@@ -301,7 +301,8 @@ a img.aligncenter {
 }
 .patient_body{
     width: 65%;
-    padding-left: 15px;
+    min-height: 100vh;
+    padding: 0 50px;
 }
 .form_title{
     font-size: 32px;
@@ -330,21 +331,24 @@ a img.aligncenter {
     top: 0;
     left: 0;
     width: 90%;
+    max-width: 330px;
     height: 100%;
     padding: 0 15px;
     font-size: 16px;
-    border: 2px solid #2895f1;
+    border: 2px solid #adadad;
+    background: #fff;
     border-radius: 10px;
     outline: none;
-    background: none;
     z-index: 1;
 }
 .input_title{
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
     line-height: 20px;
-    padding-bottom: 8px;
-    color: #111;
+    padding-bottom: 10px;
+}
+.input_title span{
+    color: #fc3535;
 }
 .form_label{
     position: absolute;
@@ -356,24 +360,54 @@ a img.aligncenter {
     color: #888;
     font-size: 16px;
     transition: all .3s;
+    z-index: 10;
+    pointer-events: none;
 }
-.form_input:focus + .form_label{
-    top: -12px;
+.not_required.filled ~ .form_label{
+    top: -10px;
+    left: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.not_required:focus, .not_required.filled{
+    border-color: #2895f1;
+}
+.form_input:focus ~ .form_label{
+    top: -10px;
     left: 10px;
     color: #2895f1;
     font-size: 14px;
     font-weight: 600;
-    z-index: 10;
 }
-.form_input:not(::placeholder-shown).form_input:not(:focus)+ .form_label{
-    top: -12px;
+.form_input:required.form_input:valid ~ .form_label{
+    top: -10px;
     left: 10px;
     font-size: 14px;
     font-weight: 600;
-    z-index: 10;
 }
-.form_input:focus{
-    border: 2px solid #222;
+.form_input:focus, .form_input:required.form_input:valid{
+    border-color: #2895f1;
+}
+.rule_area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: span 4;
+    margin: -15px 0;
+}
+.rule_input{
+    display: flex;
+    align-items: center;
+}
+.form_rule{
+    margin-right: 5px;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+.rule_text{
+    font-size: 16px;
+    color: #fc3535;
 }
 .patient_btn{
     width: 200px;
@@ -384,11 +418,17 @@ a img.aligncenter {
     letter-spacing: 1.5px;
     text-align: center !important;
     background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
-    margin-top: 15px;
-    grid-column: span 2;
+    grid-column: span 4;
 }
-.patient_btn:hover{
+.patient_btn:hover, .patient_btn:focus{
     background: linear-gradient(to left, #39b49a 0%, #1d86df 100%);
+}
+.patient_btn:focus:after {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
 }
 /* photo uploader */
 .input_uploader{
@@ -402,8 +442,9 @@ a img.aligncenter {
 }
 .form__wrapper{
     position: relative;
-    height: 250px;
+    min-height: 250px;
     width: 100%;
+    max-width: 600px;
     border: 2px dashed #8a8888;
     border-radius: 15px;
     display: flex;
@@ -489,6 +530,18 @@ a img.aligncenter {
     display: -webkit-box;
     margin: 0;
 }
+::-webkit-scrollbar{
+    width: 12px;
+    background: rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-track{
+    background: transparent;
+}
+::-webkit-scrollbar-thumb{
+    width: 12px;
+    background: #1d86df;
+    border-radius: 4px;
+}
 /* Patient panel styling */
 .patient_panel{
     position: fixed;
@@ -496,34 +549,91 @@ a img.aligncenter {
     right: 0;
     width: 35%;
     height: 100vh;
+    min-height: 750px;
     padding: 15px;
-    background: #f2d184;
+    background: #FBAE3C;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    overflow-y: scroll;
+}
+.patient_panel::-webkit-scrollbar {
+    display: none;
 }
 .patient_panel_title{
-    color: #fff;
+    color: #ff0033;
     font-size: 24px;
     line-height: 24px;
 }
 .patient_panel_text{
-    color: #866118;
+    color: #fff;
     font-size: 32px;
     line-height: 24px;
     font-weight: 700;
+    padding: 15px 0 30px;
 }
 .patient_panel_info{
-    color: #866118;
+    color: #ffffff;
     font-size: 18px;
     line-height: 20px;
+}
+.patient_panel_img{
+    object-fit: cover;
+    margin: 15px 0 30px;
+    animation: topBottom 3s infinite;
+}
+@keyframes topBottom {
+    0%{
+        transform: translateY(0px);
+    } 50%{
+        transform: translateY(-30px);
+    } 100%{
+        transform: translateY(0px);
+    } 
 }
 .patient_panel_footer{
     color: #fff;
     font-size: 16px;
     font-weight: 500;
 }
+@media (max-width: 992px) {
+    .patient_body{
+        padding: 0 15px;
+        width: 70%;
+    }
+    .patient_panel{
+        width: 30%;
+    }
+}
+@media (max-width: 900px) {
+    .patient_panel{
+        display: none;
+    }
+    .patient_body{
+        width: 100%;
+        padding: 0 50px;
+    }
+}
+@media (max-width: 776px) {
+    .patient_body{
+        padding: 0 15px;
+    }
+    .input_content{
+        grid-column: span 4;
+        margin: 0 auto;
+        min-width: 350px;
+    }
+    .patient_btn{
+        margin: 0 auto;
+        grid-column: span 4;
+    }
+}
+@media (max-width: 360px) {
+    .input_content{
+        min-width: 320px;
+    }
+}
+
 /*------------------------------------------------------------------
     HEADER
 -------------------------------------------------------------------*/

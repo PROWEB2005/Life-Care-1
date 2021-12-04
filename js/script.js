@@ -1,6 +1,3 @@
-const inputs = document.querySelectorAll('.form_input'),
-    labels = document.querySelectorAll('.form_label'),
-    patientForm = document.querySelectorAll('.patient_form');
 class imgUploader {
     constructor(){
         const FormimgUploader = document.querySelector('.form__imgUploader');
@@ -36,3 +33,13 @@ class imgUploader {
     }
 }
 const imguploader = new imgUploader();
+const inputs = document.querySelectorAll('input');
+for (let i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener('input', function(){
+        if (inputs[i].value.length >= 1) {
+            inputs[i].classList.add('filled');
+        } else{
+            inputs[i].classList.remove('filled');
+        }
+    });
+}

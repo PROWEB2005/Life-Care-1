@@ -1,12 +1,14 @@
 <?
+ob_start();
 include('./db.php');
-$email = $_POST['email'];
+$login = $_POST['login'];
 $password = $_POST['password'];
-$admin = adminLogin($email,$password);
+$admin = adminLogin($login, $password);
 if (!$admin) {
-    header("Location: ../pages/admin.php");
+    header("Location: ../?route=admin&error=true");
 } else {
-    adminLogin($email,$password);
-    header("Location: ../pages/patient.php");
+    adminLogin($login,$password);
+    header("Location: ../?route=patient");
 };
+ob_end_flush();
 ?>
